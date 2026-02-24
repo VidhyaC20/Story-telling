@@ -6,6 +6,8 @@ from dotenv import load_dotenv
 from openai import OpenAI
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
+from flask_cors import CORS
+
 
 warnings.filterwarnings("ignore")
 
@@ -13,6 +15,7 @@ warnings.filterwarnings("ignore")
 load_dotenv()
 
 app = Flask(__name__)
+CORS(app)
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
@@ -67,4 +70,5 @@ def index():
 
 
 if __name__ == "__main__":
+
     app.run(debug=True)
