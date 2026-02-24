@@ -5,7 +5,9 @@ langchain-openai==1.1.6
 openai==2.14
 pip==25.3
 flask
+flask-cors
 gunicorn
+
 
 
 
